@@ -637,6 +637,7 @@ options() {
 ###############
 ############################
 chmod +x *
+apt-get install debianutils -y
 clear
 banner
 main_page
