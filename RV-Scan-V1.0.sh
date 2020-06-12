@@ -12,27 +12,22 @@ cyan='\033[1;36m'        # Cyan
 white='\033[1;37m'       # White
 
 banner(){
-echo -e "$red ███████████  $green █████   █████  $cyan   █████████                               "
-sleep .1
-echo -e "$yellow░░$red███$yellow░░░░░$red███ $green░░███   ░░███   $cyan  ███░░░░░███      $white V1.0 Using ${cyan}Nmap "
-sleep .1
-echo -e "$yellow ░$red███    $yellow░$red███ $green ░███    ░███   $cyan ░███    ░░░   ██████   ██████   ████████  "
-sleep .1
-echo -e "$yellow ░$red██████████  $green ░███    ░███   $cyan ░░█████████  ███░░███ ░░░░░███ ░░███░░███ "
-sleep .1
-echo -e "$yellow ░$red███$yellow░░░░░$red███ $green ░░███   ███    $cyan  ░░░░░░░░███░███ ░░░   ███████  ░███ ░███ "
-sleep .1
-echo -e "$yellow ░$red███    $yellow░$red███ $green ░░░█████░      $cyan  ███    ░███░███  ███ ███░░███  ░███ ░███ "
-sleep .1
-echo -e "$red █████   █████$green    ░░███       $cyan ░░█████████ ░░██████ ░░████████ ████ █████"
-sleep .1
-echo -e "$yellow░░░░░   ░░░░░ $green     ░░░        $cyan  ░░░░░░░░░   ░░░░░░   ░░░░░░░░ ░░░░ ░░░░░ $Colof"
-echo ""                                                                       
+	sleep .1
+	echo -e "${red}___________    ${yellow}__  ${green}________${white}V1.0  ${red}Using ${cyan}Nmap"
+	sleep .1
+	echo -e "${red}___  __ \_ ${yellow}|  / /  ${green}__  ___/___________ _______ "
+	sleep .1
+	echo -e "${red}__  /_/ /_ ${yellow}| / /   ${green}_____ \_  ___/  __  /_  __ \ "
+	sleep .1
+	echo -e "${red}_  _, _/__ ${yellow}|/ /    ${green}____/ // /__ / /_/ /_  / / /"
+	sleep .1
+	echo -e "${red}/_/ |_| ${yellow}_____/     ${green}/____/ \___/ \__,_/ /_/ /_/  $Colof"     
+	echo ""                                                                       
 }
 
 main_page() {
 if [ "$(which nmap)" == "" ]; then
-	echo -e "$yellow{$red!$yellow} $redNmap Not Found... ${green}Installing Nmap ~ $Colof"
+	echo -e "${yellow}{$red!$yellow} $redNmap Not Found... ${green}Installing Nmap ~ $Colof"
 
 	if [ "$(apt-get install nmap -y)" == "" ]; then
 		sudo apt-get install nmap -y
@@ -41,26 +36,29 @@ if [ "$(which nmap)" == "" ]; then
 	fi
 
 else
+	echo -e "${blue}+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+"
+	sleep .1
+	echo -e ""
 	echo -e "$cyan  <1> Full scan (with OS detection)"
 	echo ""
 	echo -e "$cyan  <2> Normal scan (Scan 1000 ports)"
 	echo ""
-	sleep .2
+	sleep .1
 	echo -e "$yellow  <3> Fast scan (Scan 100 ports only)"
 	echo ""
 	echo -e "$yellow  <4> Scan IP with specific ports range"
 	echo ""
-	sleep .2
+	sleep .1
 	echo -e "$green  <5> Scan IP with ports list"
 	echo ""
 	echo -e "$green  <6> Scan with IP,s range"
 	echo ""
-	sleep .2
+	sleep .1
 	echo -e "$white  <7> Scan IP,s from txt file"
 	echo ""
 	echo -e "$white  <8> Scan IP,s and Ports From txt file"
 	echo ""
-	sleep .2
+	sleep .1
 	echo -e "$blue  <9> About me ^_^"
 	echo ""
 	echo -e "$red  <00> Exit .. $Colof"
@@ -636,7 +634,7 @@ options() {
 #$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 ###############
 ############################
-chmod +x *
+chmod +x *.sh
 apt-get install debianutils -y
 clear
 banner
