@@ -1,5 +1,11 @@
 #!bin/bash
 
+<<comment
+###############################################
+######>>>> BY:= Red_Vairus-EG
+###############################################
+comment
+
 Colof='\033[0m'       # Text Reset
 
 black='\033[1;30m'       # Black
@@ -106,7 +112,7 @@ options() {
 		echo -e "$white"
 		read -p " >>>}Enter Ip target: " target1
 		echo " "
-		echo -e "${white}     ++++++++++>[ Scaning ${green}$target1 ${white}]<++++++++++ $blue"
+		echo -e "${white}++++++++++>[ Scaning ${green}$target1 ${white}]<++++++++++ $blue"
 
 		until [ -e $target1 ]; do
 			mkdir $target1
@@ -144,7 +150,7 @@ options() {
 		echo -e "$cyan"
 		read -p " >>>}Enter Ip target: " target1
 		echo " "
-		echo -e "$yellow      ++++++++++>[ Scaning ${red}$target1 $yellow]<++++++++++$red"
+		echo -e "$yellow++++++++++>[ Scaning ${red}$target1 $yellow]<++++++++++$red"
 
 		until [ -e $target1 ]; do
 			mkdir $target1
@@ -182,7 +188,7 @@ options() {
 		echo -e "$yellow"
 		read -p " >>>}Enter Ip target: " target1
 		echo " "
-		echo -e "$green     ++++++++++>[ Scaning ${blue}$target1 $green]<++++++++++$yellow"
+		echo -e "$green++++++++++>[ Scaning ${blue}$target1 $green]<++++++++++$yellow"
 
 		until [ -e $target1 ]; do
 			mkdir $target1
@@ -224,7 +230,7 @@ options() {
 		read -p "   >>>}Enter end port: " port2
 		echo " "
 		echo " "
-		echo -e "$blue  ++++++++++>[ Scaning ${white}$target1 ${blue}from port ${green}$port1 ${blue}to port ${cyan}$port2 ${blue}]<++++++++++$green"
+		echo -e "$blue+>[ Scan ${white}$target1 ${blue}from port ${green}$port1 ${blue}to port ${cyan}$port2 ${blue}]<+$green"
 
 		res_dir="$target1-$port1~$port2"
 
@@ -298,7 +304,7 @@ options() {
 
 		for port in $(cat $ports_lst); do
 			
-			echo -e "${red}     ++++++++++>[ Scaning ${white}$target1 ${red}Port= ${green}$port $red]<++++++++++ $cyan"
+			echo -e "${red}++++++>[ Scaning ${white}$target1 ${red}Port= ${green}$port $red]<++++++ $cyan"
 
 			op_file="$target1-$port"
 
@@ -349,7 +355,7 @@ options() {
 
 			clear
 			banner
-			echo -e "$green      ++++++++++>[ Scaning targets ${white}$target ${green}]<++++++++++ $yellow"
+			echo -e "$green++++++>[ Scaning targets ${white}$target ${green}]<+++++ $yellow"
 
 			until [ -e $target ]; do
 				mkdir $target
@@ -439,7 +445,7 @@ options() {
 
 			clear
 			banner
-			echo -e "$white      ++++++++++>[ Scaning IP,s From IP,s list ]<++++++++++ $green"
+			echo -e "$white+++++++>[ Scaning IP,s From IP,s list ]<+++++++ $green"
 
 			until [ -e IP-List-Scan ]; do
 				mkdir IP-List-Scan
@@ -508,7 +514,7 @@ options() {
 
 	    if [ -s $ip_lst ]; then
 			echo " "
-	        echo -e "$white   [#]$green IP list imported success"
+	        echo -e "$white   [#]$green IP,s list imported success"
 	        sleep 1
 		else
 			echo " "
@@ -538,7 +544,7 @@ options() {
 
 		if [ -s $port_lst ]; then
 			echo " "
-	       	echo -e "$green   [#]$white Port list imported success"
+	       	echo -e "$green   [#]$white Ports list imported success"
 	       	sleep 2
 	        clear
 		else
@@ -553,7 +559,7 @@ options() {
 
 		clear
 		banner
-		echo -e "$red      ++++++++++>[ Scaning ${green}IP,s ${red}and ${cyan}Ports ${red}From list ]<++++++++++"
+		echo -e "$red++++>[ Scaning ${green}IP,s ${red}and ${cyan}Ports ${red}From list ]<++++"
 
 		until [ -e IP-List-Scan ]; do
 			mkdir IP-List-Scan
@@ -562,7 +568,7 @@ options() {
 		for port in $(cat $port_lst); do
 			echo -e "$yellow"
 			nmap -iL $ip_lst -p $port -oN IP-List-Scan.txt
-			echo -e "$red --------------------------------------------------------------------------"
+			echo -e "$red+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+"
 		done
 
 		mv IP-List-Scan.txt IP-List-Scan 
